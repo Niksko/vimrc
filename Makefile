@@ -24,6 +24,10 @@ install-core:
 	@echo "Link to real vimrc$(ccend)"
 	ln -sf $(PWD)/vimrc $(HOME)/.vimrc # link to real vimrc
 	@echo "$(ccgreen)DONE with core install tasks.$(ccend)"
+	@echo ""
+	@echo "$(ccred)Final notes:"
+	@echo "    * Remember to install any required linters (eg. flake8, pylint)"
+	@echo "    * Instal python-powerline-git from the aur for the powerline font needed by airline/statusline$(ccend)"
 
 backup-vimrc:
 	@echo "$(ccyellow)Backing up your .vimrc iff neccessary...$(ccend)"
