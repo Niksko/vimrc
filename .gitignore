@@ -1,0 +1,7 @@
+# Gitignore a .netrwhist file because I don't know what it's for
+.netrwhist
+
+# Gitignore everything in the bundle directory
+bundle/*
+# Except for Vundle
+!bundle/Vundle.vim
