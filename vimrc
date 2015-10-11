@@ -81,6 +81,9 @@ set foldmethod=indent
 " Turn on closetag plugin support for specified filetypes
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.xml,*.xsd,*.xslt"
 
+" Set the pythonpath correctly
+let $PYTHONPATH='/usr/lib/python3.5/site-packages'
+
 " Git integration with statusline/airplane
 set statusline+=%{fugitive#statusline()}
 
@@ -110,6 +113,9 @@ let g:syntastic_python_pylint_post_args= "--disable=line-too-long"
 
 " Get airline to showup without making a split
 set laststatus=2
+
+" Let airline auto populate powerline symbols
+let g:airline_powerline_fonts = 1
 
 " Add spellcheck support
 set spell
