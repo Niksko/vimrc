@@ -91,6 +91,8 @@ let g:syntastic_check_on_wq = 0
 
 " Get syntastic to use pep8, then pylint for checking
 let g:syntastic_python_checkers = ['pep8', 'pylint']
+" Let syntastic show the errors from all checkers at once
+let g:syntastic_aggregate_errors = 1
 
 " Get airline to showup without making a split
 set laststatus=2
