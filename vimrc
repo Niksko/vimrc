@@ -101,7 +101,7 @@ let g:syntastic_python_flake8_args = "--max-line-length=120 --max-complexity=10"
 
 " And we also want to make pylint forget about line too long, since flake7
 " already checks that for us
-let g:syntastic_python_pylint_args= "--disable=line-too-long"
+let g:syntastic_python_pylint_post_args= "--disable=line-too-long"
 
 " Get airline to showup without making a split
 set laststatus=2
