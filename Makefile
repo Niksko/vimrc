@@ -20,14 +20,16 @@ install-core:
 	!(ls $(HOME)/.vimrc > /dev/null 2> /dev/null) || mv $(HOME)/.vimrc $(PWD)/vimrc.bak # Make backup of -vimrc if necessary
 	@echo "Creating .vimrc in your home directory..."
 	@ln -s $(PWD)/vimrc $(HOME)/.vimrc # update the link to .vimrc
+	@echo "Install Vundle plugins"
+	vim +PluginInstall +qall
 	@echo "Compiling YouCompleteMe"
 	@echo "If this fails, consult the documentation at https://github.com/Valloric/YouCompleteMe#full-installation-guide"
 	@echo "Creating a directory to build in"
-	@mkdir $(PWD)/ycm_build
+	mkdir $(PWD)/ycm_build
 	@echo "Compiling YCM"
-	@cd $(PWD)/ycm_build: cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
+	cd $(PWD)/ycm_build: cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
 	@echo "Making YCM support libs"
-	@cd $(PWD)/ycm_build: make ycm_support_libs
+	cd $(PWD)/ycm_build: make ycm_support_libs
 	@echo "DONE with core install tasks."
 
 install-externals:
