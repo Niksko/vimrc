@@ -22,7 +22,7 @@ install: backup-vimrc install-vundle install-plugins build-ycm install-core
 install-core:
 	@echo "$(ccyellow)Core install tasks."
 	@echo "Link to real vimrc$(ccend)"
-	ln -s $(PWD)/vimrc $(HOME)/.vimrc # link to real vimrc
+	ln -sf $(PWD)/vimrc $(HOME)/.vimrc # link to real vimrc
 	@echo "$(ccgreen)DONE with core install tasks.$(ccend)"
 
 backup-vimrc:
