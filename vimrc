@@ -94,6 +94,15 @@ let g:syntastic_python_checkers = ['flake8', 'pylint']
 " Let syntastic show the errors from all checkers at once
 let g:syntastic_aggregate_errors = 1
 
+" Pass some command line arguments to our checkers
+" For flake8, we want to have a max line length of 120 (to stop nagging)
+" We also want to warn about a max cyclomatic complexity of 10
+let g:syntastic_python_flake8_args = "--max-line-length=120 --max-complexity=10"
+
+" And we also want to make pylint forget about line too long, since flake7
+" already checks that for us
+let g:syntastic_python_pylint_args= "--disable=line-too-long"
+
 " Get airline to showup without making a split
 set laststatus=2
 
