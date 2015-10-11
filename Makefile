@@ -45,9 +45,9 @@ build-ycm:
 	@echo "$(ccyellow)Creating a directory to build in$(ccend)"
 	mkdir $(PWD)/ycm_build
 	@echo "Compiling YCM"
-	cd $(PWD)/ycm_build: cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
+	cd $(PWD)/ycm_build; cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
 	@echo "Making YCM support libs"
-	cd $(PWD)/ycm_build: make ycm_support_libs
+	cd $(PWD)/ycm_build; make ycm_support_libs
 
 install-vundle:
 	@echo "$(ccyellow)Installing Vundle$(ccend)"
