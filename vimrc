@@ -23,6 +23,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
 " Shortcut for commenting out lines
 Plugin 'tpope/vim-commentary'
+" Git integration
+Plugin 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -78,6 +80,9 @@ set foldmethod=indent
 
 " Turn on closetag plugin support for specified filetypes
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.xml,*.xsd,*.xslt"
+
+" Git integration with statusline/airplane
+set statusline+=%{fugitive#statusline()}
 
 " Some sensible defaults for syntastic syntax checking plugin
 set statusline+=%#warningmsg#
