@@ -41,7 +41,7 @@ install-plugins:
 
 build-ycm:
 	@echo "$(ccyellow)Compiling YouCompleteMe"
-	@echo "$(ccred)If this fails, consult the documentation at https://github.com/Valloric/YouCompleteMe#full-installation-guide"
+	@echo "$(ccred)Note: If this fails, consult the documentation at https://github.com/Valloric/YouCompleteMe#full-installation-guide"
 	@echo "$(ccyellow)Creating a directory to build in$(ccend)"
 	mkdir $(PWD)/ycm_build
 	@echo "$(ccyellow)Compiling YCM$(ccend)"
