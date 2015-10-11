@@ -1,4 +1,4 @@
-# Vimrc makefile
+# Vim makefile
 # (c) Nikolas Skoufis, 2015
 # Last updated: 11/10/15
 # 
@@ -23,11 +23,11 @@ install-core:
 	@echo "Compiling YouCompleteMe"
 	@echo "If this fails, consult the documentation at https://github.com/Valloric/YouCompleteMe#full-installation-guide"
 	@echo "Creating a directory to build in"
-	@mkdir $(PWD)/vimrc/ycm_build
+	@mkdir $(PWD)/ycm_build
 	@echo "Compiling YCM"
-	@cd $(PWD)/vimrc/ycm_build: cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
+	@cd $(PWD)/ycm_build: cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
 	@echo "Making YCM support libs"
-	@cd $(PWD)/vimrc/ycm_build: make ycm_support_libs
+	@cd $(PWD)/ycm_build: make ycm_support_libs
 	@echo "DONE with core install tasks."
 
 install-externals:
