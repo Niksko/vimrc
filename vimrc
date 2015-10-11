@@ -89,6 +89,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" Get syntastic to use pep8, then pylint for checking
+let g:syntastic_python_checkers = ['pep8', 'pylint']
+
 " Get airline to showup without making a split
 set laststatus=2
 
