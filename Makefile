@@ -35,7 +35,7 @@ install-plugins:
 	cat $(PWD)/vimrc | awk 'NR==1,/^call vundle#end()/' > temp_vimrc # Grab only the plugin portion of the vimrc into a temporary file
 	@ln -s $(PWD)/temp_vimrc $(HOME)/.vimrc # link to the temporary vimrc
 	@echo "$(ccyellow)Install Vundle plugins$(ccend)"
-	vim +PluginInstall +qall &2> /dev/null
+	vim +PluginInstall +qall
 	@echo "$(ccyellow)Delete temporary vimrc$(ccend)"
 	rm $(PWD)/temp_vimrc
 
