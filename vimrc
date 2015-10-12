@@ -25,6 +25,8 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-commentary'
 " Git integration
 Plugin 'tpope/vim-fugitive'
+" CtrlP fuzzy file search
+Plugin 'kien/ctrlp.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -123,6 +125,19 @@ set spellsuggest=best,10
 
 " Allow for switching buffers without saving
 set hidden
+
+" Settings for CtrlP plugin
+" Set default mapping and default command for opening ctrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+" Set default working directory
+let g:ctrlp_working_path_mode = 'ra'
+" Exclude some files from search
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+
+" Custom file listing command
+let g:ctrlp_user_command = 'find %s -type f'
 
 " Move vertically based on visual line, not actual line
 nnoremap j gj
