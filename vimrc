@@ -23,6 +23,10 @@ Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
 " Shortcut for commenting out lines
 Plugin 'tpope/vim-commentary'
+" Git integration
+Plugin 'tpope/vim-fugitive'
+" CtrlP fuzzy file search
+Plugin 'kien/ctrlp.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -79,6 +83,12 @@ set foldmethod=indent
 " Turn on closetag plugin support for specified filetypes
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.xml,*.xsd,*.xslt"
 
+" Set the pythonpath correctly
+let $PYTHONPATH='/usr/lib/python3.5/site-packages'
+
+" Git integration with statusline/airplane
+set statusline+=%{fugitive#statusline()}
+
 " Some sensible defaults for syntastic syntax checking plugin
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -89,12 +99,45 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" Get syntastic to use pep8, then pylint for checking
+let g:syntastic_python_checkers = ['flake8', 'pylint']
+" Let syntastic show the errors from all checkers at once
+let g:syntastic_aggregate_errors = 1
+
+" Pass some command line arguments to our checkers
+" For flake8, we want to have a max line length of 120 (to stop nagging)
+" We also want to warn about a max cyclomatic complexity of 10
+let g:syntastic_python_flake8_args = "--max-line-length=120 --max-complexity=10"
+
+" And we also want to make pylint forget about line too long, since flake7
+" already checks that for us
+let g:syntastic_python_pylint_post_args= "--disable=line-too-long"
+
 " Get airline to showup without making a split
 set laststatus=2
+
+" Let airline auto populate powerline symbols
+let g:airline_powerline_fonts = 1
 
 " Add spellcheck support
 set spell
 set spellsuggest=best,10
+
+" Allow for switching buffers without saving
+set hidden
+
+" Settings for CtrlP plugin
+" Set default mapping and default command for opening ctrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+" Set default working directory
+let g:ctrlp_working_path_mode = 'ra'
+" Exclude some files from search
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+
+" Custom file listing command
+let g:ctrlp_user_command = 'find %s -type f'
 
 " Move vertically based on visual line, not actual line
 nnoremap j gj
