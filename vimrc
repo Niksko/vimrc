@@ -121,6 +121,9 @@ let g:airline_powerline_fonts = 1
 set spell
 set spellsuggest=best,10
 
+" Allow for switching buffers without saving
+set hidden
+
 " Move vertically based on visual line, not actual line
 nnoremap j gj
 nnoremap k gk
