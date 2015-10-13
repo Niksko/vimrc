@@ -150,5 +150,8 @@ augroup configgroup
     " Indent xml type files with 2 spaces
     autocmd FileType xml,xsd,xslt setlocal shiftwidth=2
     autocmd FileType xml,xsd,xslt setlocal softtabstop=2
+    " Indent arduino type files with 2 spaces
+    autocmd FileType arduino setlocal shiftwidth=2
+    autocmd FileType arduino setlocal softtabstop=2
 augroup END
 
