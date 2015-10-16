@@ -81,7 +81,7 @@ set foldnestmax=10
 set foldmethod=indent
 
 " Turn on closetag plugin support for specified filetypes
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.xml,*.xsd,*.xslt"
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.xml,*.xsd,*.xslt,*.xsl"
 
 " Set the pythonpath correctly
 let $PYTHONPATH='/usr/lib/python3.5/site-packages'
