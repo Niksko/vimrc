@@ -147,5 +147,8 @@ augroup configgroup
     " Indent arduino type files with 2 spaces
     autocmd FileType arduino setlocal shiftwidth=2
     autocmd FileType arduino setlocal softtabstop=2
+    " Indent javascript type files with 2 spaces
+    autocmd FileType javascript setlocal shiftwidth=2
+    autocmd FileType javascript setlocal softtabstop=2
 augroup END
 
