@@ -137,6 +137,14 @@ let g:ctrlp_user_command = 'find %s -type f'
 nnoremap j gj
 nnoremap k gk
 
+
+" delimitMate stuff
+" Allows the nesting of quotes for Python docstrings
+let delimitMate_nesting_quotes = ['"','`']
+" Jumps over expansions
+let delimitMate_jump_expansion = 1
+
+
 " Language specific settings
 augroup configgroup
     " Apparently required to auto execute commands
@@ -150,5 +158,8 @@ augroup configgroup
     " Indent javascript type files with 2 spaces
     autocmd FileType javascript setlocal shiftwidth=2
     autocmd FileType javascript setlocal softtabstop=2
+    " python doc strings require this
+    autocmd FileType python let b:delimitMate_expand_inside_quotes = 1
+    autocmd FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
 augroup END
 
