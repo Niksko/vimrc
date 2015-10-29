@@ -137,21 +137,19 @@ let g:ctrlp_user_command = 'find %s -type f'
 nnoremap j gj
 nnoremap k gk
 
-
 " delimitMate stuff
 " Allows the nesting of quotes for Python docstrings
 let delimitMate_nesting_quotes = ['"','`']
 " Jumps over expansions
 let delimitMate_jump_expansion = 1
 
-
 " Language specific settings
 augroup configgroup
     " Apparently required to auto execute commands
     autocmd!
     " Indent xml type files with 2 spaces
-    autocmd FileType xml,xsd,xslt setlocal shiftwidth=2
-    autocmd FileType xml,xsd,xslt setlocal softtabstop=2
+    autocmd FileType xml,xsd,xslt,html setlocal shiftwidth=2
+    autocmd FileType xml,xsd,xslt,html setlocal softtabstop=2
     " Indent arduino type files with 2 spaces
     autocmd FileType arduino setlocal shiftwidth=2
     autocmd FileType arduino setlocal softtabstop=2
