@@ -46,6 +46,8 @@ set expandtab
 
 " Allow for using all colors
 set t_Co=256
+" Fix colors under tmux as per advice at https://askubuntu.com/a/557620
+set term=screen-256color
 
 " Show the line number
 set number
