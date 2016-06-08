@@ -27,6 +27,8 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 " CtrlP fuzzy file search
 Plugin 'kien/ctrlp.vim'
+" Urbit Hoon syntax and other goodies
+Plugin 'urbit/hoon.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
