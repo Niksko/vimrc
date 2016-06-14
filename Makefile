@@ -57,4 +57,4 @@ build-ycm:
 
 install-vundle:
 	@echo "$(ccyellow)Installing Vundle$(ccend)"
-	git submodule update --init --recursive
+	git submodule update --init --recursive --jobs=4
