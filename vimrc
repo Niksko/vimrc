@@ -55,8 +55,10 @@ set term=screen-256color
 set number
 " Show the last command in the bottom right
 set showcmd
-" Underline the current line
+" Highlight the current line
 set cursorline
+" Highlight the current column
+set cursorcolumn
 " Load filetype specific indent files
 filetype indent on
 
