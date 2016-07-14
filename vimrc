@@ -26,7 +26,7 @@ Plugin 'tpope/vim-commentary'
 " Git integration
 Plugin 'tpope/vim-fugitive'
 " CtrlP fuzzy file search
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 " Urbit Hoon syntax and other goodies
 Plugin 'urbit/hoon.vim'
 
