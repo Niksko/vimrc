@@ -105,8 +105,12 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" Get syntastic to use flake8 for checking
-let g:syntastic_python_checkers = ['flake8']
+" Aggregate errors. That is, show all errors from all checkers simultaneously
+" The default behaviour is to stop if no errors are found
+let g:syntastic_aggregate_errors = 1
+
+" Get syntastic to use flake8 for checking and mypy for type checking
+let g:syntastic_python_checkers = ['mypy', 'flake8']
 
 " Pass some command line arguments to our checkers
 " For flake8, we want to have a max line length of 120 (to stop nagging)
