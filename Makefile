@@ -44,16 +44,10 @@ install-plugins:
 	rm $(PWD)/temp_vimrc
 
 build-ycm:
-	@echo "$(ccyellow)Compiling YouCompleteMe"
-	@echo "$(ccred)Note: If this fails, consult the documentation at https://github.com/Valloric/YouCompleteMe#full-installation-guide"
-	@echo "$(ccyellow)Creating a directory to build in$(ccend)"
-	mkdir $(PWD)/ycm_build
-	@echo "$(ccyellow)Compiling YCM$(ccend)"
-	cd $(PWD)/ycm_build; cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
-	@echo "$(ccyellow)Making YCM support libs$(ccend)"
-	cd $(PWD)/ycm_build; make ycm_support_libs
-	@echo "$(ccyellow)Remove build directory$(ccend)"
-	rm -rf $(PWD)/ycm_build
+	@echo "$(ccyellow)Installing YouCompleteMe"
+	@echo "$(ccred)Note: If this fails, consult the documentation at https://github.com/Valloric/YouCompleteMe$(ccend)"
+	cd ~/.vim/bundle/YouCompleteMe; ./install.py --gocode-completer --tern-completer --clang-completer
+	@echo "$(ccgreen)Install complete$(ccend)"
 
 install-vundle:
 	@echo "$(ccyellow)Installing Vundle$(ccend)"
