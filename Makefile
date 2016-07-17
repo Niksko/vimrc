@@ -13,7 +13,7 @@ ccend=$(shell echo -e "\033[0m")
 
 update:
 	@echo "${ccyellow}Updating submodules$(ccend)"
-	git submodule update --remote --merge --recursive
+	git submodule update --remote --merge --recursive --jobs=4
 	@echo "${ccred}Note: If the YCM libs have changed, you may need to recompile"
 	@echo "YCM should notify you of this when you next launch Vim$(ccend)"
 
