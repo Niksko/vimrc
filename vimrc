@@ -29,6 +29,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'ctrlpvim/ctrlp.vim'
 " Urbit Hoon syntax and other goodies
 Plugin 'urbit/hoon.vim'
+" Plugins for jsx support in vim and proper hilighting
+Plugin 'mxw/vim-jsx'
+Plugin 'pangloss/vim-javascript'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -117,6 +120,9 @@ let g:syntastic_python_checkers = ['mypy', 'flake8']
 " We also want to warn about a max cyclomatic complexity of 10
 let g:syntastic_python_flake8_args = "--max-line-length=120 --max-complexity=10"
 
+" Enable eslint checking for javascript files
+let g:syntastic_javascript_checkers = ['eslint']
+
 " Get airline to showup without making a split
 set laststatus=2
 
@@ -137,8 +143,7 @@ let g:ctrlp_cmd = 'CtrlP'
 " Set default working directory
 let g:ctrlp_working_path_mode = 'ra'
 " Exclude some files from search
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*,*/node_modules/*
 
 " Custom file listing command
 let g:ctrlp_user_command = 'find %s -type f'
@@ -146,6 +151,9 @@ let g:ctrlp_user_command = 'find %s -type f'
 " Move vertically based on visual line, not actual line
 nnoremap j gj
 nnoremap k gk
+
+" Map renaming to F2, ala resharper
+nnoremap <F2> :YcmCompleter RefactorRename
 
 " delimitMate stuff
 " Allows the nesting of quotes for Python docstrings
@@ -158,14 +166,17 @@ augroup configgroup
     " Apparently required to auto execute commands
     autocmd!
     " Indent xml type files with 2 spaces
-    autocmd FileType xml,xsd,xslt,html setlocal shiftwidth=2
-    autocmd FileType xml,xsd,xslt,html setlocal softtabstop=2
+    autocmd FileType xml,xsd,xslt,html,css setlocal shiftwidth=2
+    autocmd FileType xml,xsd,xslt,html,css setlocal softtabstop=2
     " Indent arduino type files with 2 spaces
     autocmd FileType arduino setlocal shiftwidth=2
     autocmd FileType arduino setlocal softtabstop=2
     " Indent javascript type files with 2 spaces
     autocmd FileType javascript setlocal shiftwidth=2
     autocmd FileType javascript setlocal softtabstop=2
+    " Indent yaml type files with 2 spaces
+    autocmd FileType yaml setlocal shiftwidth=2
+    autocmd FileType yaml setlocal softtabstop=2
     " python doc strings require this
     autocmd FileType python let b:delimitMate_expand_inside_quotes = 1
     autocmd FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
