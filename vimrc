@@ -32,6 +32,8 @@ Plugin 'urbit/hoon.vim'
 " Plugins for jsx support in vim and proper hilighting
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
+" Plugins for elixir support
+Plugin 'elixir-editors/vim-elixir'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
